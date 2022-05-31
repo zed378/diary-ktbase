@@ -20,13 +20,12 @@ function Home() {
   const getDiaries = async () => {
     try {
       const { data, error } = await kontenbase.service("Diaries").find();
-
+      console.log(data);
       setDiaries(data);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(diaries);
 
   useEffect(() => {
     getDiaries();

@@ -67,9 +67,6 @@ function EditProfilePic() {
       const file = form.photo[0];
 
       const { data, error } = await kontenbase.storage.upload(file);
-      setForm({
-        photo: data.url,
-      });
 
       if (data) {
         const { pic, err } = await kontenbase.service("Users").updateById(id, {

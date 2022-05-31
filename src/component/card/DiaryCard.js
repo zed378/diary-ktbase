@@ -1,9 +1,10 @@
 // import package
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import dateFormat, { masks } from "dateformat";
 import DOMPurify from "dompurify";
 import { KontenbaseClient } from "@kontenbase/sdk";
+import axios from "axios";
 
 // import assets
 import bookmark from "../../assets/img/bookmark.svg";
@@ -15,20 +16,18 @@ import edit from "../../assets/img/edit.svg";
 import editimg from "../../assets/img/editimg.svg";
 import trash from "../../assets/img/trash.svg";
 import cssModules from "../../assets/css/Home.module.css";
-import { UserContext } from "../../context/UserContext";
-
-// import config
-import { API } from "../../config/api";
 
 function DiaryCard({ item, press }) {
   let navigate = useNavigate();
   const logTrigger = () => {
     document.getElementById("loginbutton").click();
   };
-  const [state] = useContext(UserContext);
   const [modal, setModal] = useState(null);
 
   const [user, setUser] = useState([]);
+
+  const [findMark, setFindMark] = useState(null);
+  const [findLike, setFindLike] = useState(null);
 
   const [marked, setMarked] = useState([]);
   const [like, setLike] = useState([]);
@@ -39,43 +38,34 @@ function DiaryCard({ item, press }) {
     apiKey: process.env.REACT_APP_API_KEY,
   });
 
-  const getUser = async () => {
-    const { data, error } = await kontenbase
-      .service("Users")
-      .getById(localStorage.id);
-
-    setUser(data);
+  axios.defaults.headers.common = {
+    Authorization: `Bearer ${localStorage.token}`,
   };
 
-  const setMark = async (id) => {
+  const getUser = async () => {
     try {
-      const { data, error } = await kontenbase.service("Bookmarks").find({
-        where: {
-          userId: [localStorage.id],
-          postId: [item._id],
-        },
-      });
+      const data = await axios.get(
+        `${process.env.REACT_APP_API_URL}/Users/${localStorage.id}`
+      );
 
-      if (!data) {
-        const { mark, error } = await kontenbase.service("Bookmarks").create({
+      setUser(data.data);
+    } catch (error) {}
+  };
+
+  const setMark = async () => {
+    try {
+      const data = await axios.get(
+        `${process.env.REACT_APP_API_URL}/Bookmarks?diariesId=${item._id}&userId=${localStorage.id}`
+      );
+      setFindMark(data.data[0]);
+
+      if (data.data.length === 0) {
+        const { data, error } = await kontenbase.service("Bookmarks").create({
           userId: [localStorage.id],
-          postId: [item._id],
-          isMark: 1,
+          diariesId: [item._id],
         });
       } else {
-        if (data.isMark === 1) {
-          const { mark, error } = await kontenbase
-            .service("Bookmarks")
-            .updateById(data._id, {
-              isMark: 0,
-            });
-        } else {
-          const { mark, error } = await kontenbase
-            .service("Bookmarks")
-            .updateById(data._id, {
-              isMark: 1,
-            });
-        }
+        delMark(findMark._id);
       }
 
       getmark();
@@ -90,12 +80,22 @@ function DiaryCard({ item, press }) {
       const { data, error } = await kontenbase.service("Bookmarks").find({
         where: {
           userId: localStorage.id,
-          postId: item._id,
-          isMark: 1,
+          diariesId: item._id,
         },
       });
 
       setMarked(data);
+      setFindMark(null);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const delMark = async (idMark) => {
+    try {
+      const { data, error } = await kontenbase
+        .service("Bookmarks")
+        .deleteById(`${idMark}`);
     } catch (error) {
       console.log(error);
     }
@@ -103,33 +103,18 @@ function DiaryCard({ item, press }) {
 
   const clickLike = async () => {
     try {
-      const { data, error } = await kontenbase.service("Likes").find({
-        where: {
-          userId: [localStorage.id],
-          postId: [item._id],
-        },
-      });
+      const data = await axios.get(
+        `${process.env.REACT_APP_API_URL}/Likes?diariesId=${item._id}&userId=${localStorage.id}`
+      );
+      setFindLike(data.data[0]);
 
-      if (!data) {
-        const { like, error } = await kontenbase.service("Likes").create({
+      if (data.data.length === 0) {
+        const { data, error } = await kontenbase.service("Likes").create({
           userId: [localStorage.id],
-          postId: [item._id],
-          isLike: 1,
+          diariesId: [item._id],
         });
       } else {
-        if (data.isLike === 1) {
-          const { like, error } = await kontenbase
-            .service("Bookmarks")
-            .updateById(data._id, {
-              isLike: 0,
-            });
-        } else {
-          const { like, error } = await kontenbase
-            .service("Bookmarks")
-            .updateById(data._id, {
-              isLike: 1,
-            });
-        }
+        delLike(findLike._id);
       }
 
       getLike();
@@ -142,9 +127,24 @@ function DiaryCard({ item, press }) {
 
   const getLike = async () => {
     try {
-      const response = await API.get(`/like/${item.id}`);
+      const { data, error } = await kontenbase.service("Likes").find({
+        where: {
+          userId: localStorage.id,
+          diariesId: item._id,
+        },
+      });
+      setLike(data);
+      setFindLike(null);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-      setLike(response.data.data);
+  const delLike = async (idLike) => {
+    try {
+      const { data, error } = await kontenbase
+        .service("Likes")
+        .deleteById(`${idLike}`);
     } catch (error) {
       console.log(error);
     }
@@ -152,9 +152,14 @@ function DiaryCard({ item, press }) {
 
   const getAllLike = async () => {
     try {
-      const response = await API.get(`/get-like/${item.id}`);
+      const { data, error } = await kontenbase.service("Likes").find({
+        lookup: { _id: "*" },
+        where: {
+          diariesId: item._id,
+        },
+      });
 
-      setAllLike(response.data.data);
+      setAllLike(data);
     } catch (error) {
       console.log(error);
     }
@@ -162,9 +167,13 @@ function DiaryCard({ item, press }) {
 
   const getAllComment = async () => {
     try {
-      const response = await API.get(`/comments/${item.id}`);
-
-      setAllComment(response.data.data);
+      const { data, error } = await kontenbase.service("Comments").find({
+        lookup: { _id: "*" },
+        where: {
+          diariesId: item._id,
+        },
+      });
+      setAllComment(data);
     } catch (error) {
       console.log(error);
     }
@@ -197,7 +206,7 @@ function DiaryCard({ item, press }) {
 
   const delPost = async (id) => {
     try {
-      await API.delete(`/post/${id}`);
+      const { data, error } = await kontenbase.service("posts").deleteById(id);
 
       setModal(null);
       press();
@@ -222,8 +231,8 @@ function DiaryCard({ item, press }) {
         <div
           className={cssModules.bookmark}
           onClick={() => {
-            if (state.isLogin) {
-              setMark(item.id);
+            if (localStorage.token) {
+              setMark();
             } else {
               logTrigger();
             }
@@ -231,7 +240,7 @@ function DiaryCard({ item, press }) {
         >
           {localStorage.token ? (
             <>
-              {marked === null || marked.isMark === 0 ? (
+              {marked === null || marked.length === 0 ? (
                 <img src={bookmark} alt="Bookmark" />
               ) : (
                 <img src={bookmarked} alt="Bookmark" />
@@ -245,7 +254,7 @@ function DiaryCard({ item, press }) {
         {/* edit button */}
         {localStorage.token ? (
           <>
-            {item.userId === localStorage.id ? (
+            {item.userId[0]._id === localStorage.id ? (
               <div className={cssModules.menuEdit}>
                 <div
                   className={cssModules.menuImg}
@@ -291,16 +300,16 @@ function DiaryCard({ item, press }) {
           <div
             className={cssModules.loveWrapper}
             onClick={() => {
-              if (state.isLogin) {
+              if (localStorage.token) {
                 clickLike();
               } else {
                 logTrigger();
               }
             }}
           >
-            {state.isLogin ? (
+            {localStorage.token ? (
               <>
-                {like === null || like.isLike === 0 ? (
+                {like === null || like.length === 0 ? (
                   <img
                     src={love}
                     alt="Like"

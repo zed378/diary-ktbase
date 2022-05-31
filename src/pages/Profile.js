@@ -47,7 +47,6 @@ function Profile() {
       console.log(error);
     }
   };
-  console.log(user);
 
   useEffect(() => {
     getUser();

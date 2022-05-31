@@ -1,5 +1,6 @@
 // import package
 import { useState, useEffect, useContext } from "react";
+import { KontenbaseClient } from "@kontenbase/sdk";
 
 // import component
 import BookmarkCard from "../component/card/BookmarkCard";
@@ -14,12 +15,21 @@ import { API } from "../config/api";
 function Bookmark() {
   const [state] = useContext(UserContext);
 
+  const kontenbase = new KontenbaseClient({
+    apiKey: process.env.REACT_APP_API_KEY,
+  });
+
   const [marked, setMarked] = useState([]);
   const getMarked = async () => {
     try {
-      const response = await API.get(`/marks/${state.user.id}`);
-
-      setMarked(response.data.data);
+      const { data, error } = await kontenbase.service("Diaries").find({
+        lookup: "*",
+        where: {
+          userId: localStorage.id,
+        },
+      });
+      console.log(data);
+      setMarked(data);
     } catch (error) {
       console.log(error);
     }
@@ -42,9 +52,9 @@ function Bookmark() {
           </div>
         ) : (
           <>
-            {marked?.map((item, index) => (
+            {/* {marked?.map((item, index) => (
               <BookmarkCard item={item} key={index} press={getMarked} />
-            ))}
+            ))} */}
           </>
         )}
         {/* end of card */}
