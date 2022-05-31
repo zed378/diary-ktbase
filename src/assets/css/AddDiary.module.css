@@ -1,0 +1,1488 @@
+.writeContainer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 75px;
+}
+
+.writeContainer > h1 {
+  margin: 1rem 0 2rem 0;
+  font-size: 3rem;
+  text-align: left;
+}
+
+.imgPreview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.textPreview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 350px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.textPreview:hover {
+  border: 4px dashed white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.textPreview > h1 {
+  color: white;
+}
+
+.imgWrapper {
+  display: inline-block;
+  position: relative;
+  background: rgb(153, 153, 153);
+  overflow: hidden;
+  width: 40%;
+  height: 400px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+}
+
+.imgWrapper:hover {
+  background-color: rgb(85, 85, 85);
+}
+
+.imgWrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formContent {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formContent > label {
+  font-size: 2rem;
+  font-family: avenirs;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.formContent > input {
+  height: 2.5rem;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 1rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.formContent > input:focus {
+  outline: 2px solid #2e86de;
+  border: none;
+}
+
+.formContent > button {
+  height: 3rem;
+  font-size: 1rem;
+  background-color: #2e86de;
+  cursor: pointer;
+}
+
+.formContent > button:hover {
+  background-color: rgb(37, 88, 216);
+}
+
+.btnWrapper > button {
+  width: 50%;
+  border: none;
+  height: 3rem;
+  color: white;
+  font-size: 1rem;
+  font-family: avenirs;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.backBtn {
+  background-color: #ff1d1d;
+  border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -ms-border-radius: 5px 0 0 5px;
+  -o-border-radius: 5px 0 0 5px;
+}
+
+.backBtn:hover {
+  background-color: #5f0707;
+}
+
+.saveBtn {
+  background-color: #2e86de;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -ms-border-radius: 0 5px 5px 0;
+  -o-border-radius: 0 5px 5px 0;
+}
+
+.saveBtn:hover {
+  background-color: #1e5fa0;
+}
+
+@media only screen and (max-width: 1440px) {
+  .writeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+  }
+
+  .writeContainer > h1 {
+    margin: 1rem 0 2rem 0;
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+  .imgPreview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .textPreview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 350px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .textPreview:hover {
+    border: 4px dashed white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .textPreview > h1 {
+    color: white;
+  }
+
+  .imgWrapper {
+    display: inline-block;
+    position: relative;
+    background: rgb(153, 153, 153);
+    overflow: hidden;
+    width: 50%;
+    height: 400px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .imgWrapper:hover {
+    background-color: rgb(85, 85, 85);
+  }
+
+  .imgWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContent {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formContent > label {
+    font-size: 2rem;
+    font-family: avenirs;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .formContent > input {
+    height: 2.5rem;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .formContent > input:focus {
+    outline: 2px solid #2e86de;
+    border: none;
+  }
+
+  .formContent > button {
+    height: 3rem;
+    font-size: 1rem;
+    background-color: #2e86de;
+    cursor: pointer;
+  }
+
+  .formContent > button:hover {
+    background-color: rgb(37, 88, 216);
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 3rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .writeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 40px;
+  }
+
+  .writeContainer > h1 {
+    margin: 0 0 2rem 0;
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+  .imgPreview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .textPreview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 350px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .textPreview:hover {
+    border: 4px dashed white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .textPreview > h1 {
+    color: white;
+  }
+
+  .imgWrapper {
+    display: inline-block;
+    position: relative;
+    background: rgb(153, 153, 153);
+    overflow: hidden;
+    width: 50%;
+    height: 400px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .imgWrapper:hover {
+    background-color: rgb(85, 85, 85);
+  }
+
+  .imgWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContent {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formContent > label {
+    font-size: 2rem;
+    font-family: avenirs;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .formContent > input {
+    height: 2.5rem;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .formContent > input:focus {
+    outline: 2px solid #2e86de;
+    border: none;
+  }
+
+  .formContent > button {
+    height: 3rem;
+    font-size: 1rem;
+    background-color: #2e86de;
+    cursor: pointer;
+  }
+
+  .formContent > button:hover {
+    background-color: rgb(37, 88, 216);
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 3rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .writeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 35px;
+  }
+
+  .writeContainer > h1 {
+    margin: 0 0 2rem 0;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .imgPreview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .textPreview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 325px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .textPreview:hover {
+    border: 4px dashed white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .textPreview > h1 {
+    color: white;
+    font-size: 1.75rem;
+  }
+
+  .imgWrapper {
+    display: inline-block;
+    position: relative;
+    background: rgb(153, 153, 153);
+    overflow: hidden;
+    width: 60%;
+    height: 350px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .imgWrapper:hover {
+    background-color: rgb(85, 85, 85);
+  }
+
+  .imgWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContent {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formContent > label {
+    font-size: 1.75rem;
+    font-family: avenirs;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .formContent > input {
+    height: 2.5rem;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .formContent > input:focus {
+    outline: 2px solid #2e86de;
+    border: none;
+  }
+
+  .formContent > button {
+    height: 3rem;
+    font-size: 1rem;
+    background-color: #2e86de;
+    cursor: pointer;
+  }
+
+  .formContent > button:hover {
+    background-color: rgb(37, 88, 216);
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 3rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .writeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 25px;
+  }
+
+  .writeContainer > h1 {
+    margin: 0 0 2rem 0;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .imgPreview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .textPreview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 325px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .textPreview:hover {
+    border: 4px dashed white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .textPreview > h1 {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .imgWrapper {
+    display: inline-block;
+    position: relative;
+    background: rgb(153, 153, 153);
+    overflow: hidden;
+    width: 65%;
+    height: 350px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .imgWrapper:hover {
+    background-color: rgb(85, 85, 85);
+  }
+
+  .imgWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formContent > label {
+    font-size: 1.5rem;
+    font-family: avenirs;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .formContent > input {
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .formContent > input:focus {
+    outline: 1.5px solid #2e86de;
+    border: none;
+  }
+
+  .formContent > button {
+    height: 3rem;
+    font-size: 1rem;
+    background-color: #2e86de;
+    cursor: pointer;
+  }
+
+  .formContent > button:hover {
+    background-color: rgb(37, 88, 216);
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 3rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .writeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+  }
+
+  .writeContainer > h1 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.75rem;
+    text-align: left;
+  }
+
+  .imgPreview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .textPreview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 275px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .textPreview:hover {
+    border: 4px dashed white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .textPreview > h1 {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .imgWrapper {
+    display: inline-block;
+    position: relative;
+    background: rgb(153, 153, 153);
+    overflow: hidden;
+    width: 65%;
+    height: 300px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .imgWrapper:hover {
+    background-color: rgb(85, 85, 85);
+  }
+
+  .imgWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formContent > label {
+    font-size: 1.25rem;
+    font-family: avenirs;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .formContent > input {
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .formContent > input:focus {
+    outline: 1.5px solid #2e86de;
+    border: none;
+  }
+
+  .formContent > button {
+    height: 3rem;
+    font-size: 1rem;
+    background-color: #2e86de;
+    cursor: pointer;
+  }
+
+  .formContent > button:hover {
+    background-color: rgb(37, 88, 216);
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2.75rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .writeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+  }
+
+  .writeContainer > h1 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .imgPreview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .textPreview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .textPreview:hover {
+    border: 4px dashed white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .textPreview > h1 {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .imgWrapper {
+    display: inline-block;
+    position: relative;
+    background: rgb(153, 153, 153);
+    overflow: hidden;
+    width: 100%;
+    height: 325px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .imgWrapper:hover {
+    background-color: rgb(85, 85, 85);
+  }
+
+  .imgWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formContent > label {
+    font-size: 1.25rem;
+    font-family: avenirs;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .formContent > input {
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .formContent > input:focus {
+    outline: 1.5px solid #2e86de;
+    border: none;
+  }
+
+  .formContent > button {
+    height: 3rem;
+    font-size: 1rem;
+    background-color: #2e86de;
+    cursor: pointer;
+  }
+
+  .formContent > button:hover {
+    background-color: rgb(37, 88, 216);
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2.5rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .writeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+  }
+
+  .writeContainer > h1 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .imgPreview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .textPreview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 250px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .textPreview:hover {
+    border: 3px dashed white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .textPreview > h1 {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .imgWrapper {
+    display: inline-block;
+    position: relative;
+    background: rgb(153, 153, 153);
+    overflow: hidden;
+    width: 100%;
+    height: 275px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .imgWrapper:hover {
+    background-color: rgb(85, 85, 85);
+  }
+
+  .imgWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formContent > label {
+    font-size: 1.25rem;
+    font-family: avenirs;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .formContent > input {
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .formContent > input:focus {
+    outline: 1.5px solid #2e86de;
+    border: none;
+  }
+
+  .formContent > button {
+    height: 2.5rem;
+    font-size: 1rem;
+    background-color: #2e86de;
+    cursor: pointer;
+  }
+
+  .formContent > button:hover {
+    background-color: rgb(37, 88, 216);
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2.25rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .writeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 15px;
+  }
+
+  .writeContainer > h1 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .imgPreview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .textPreview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .textPreview:hover {
+    border: 3px dashed white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .textPreview > h1 {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .imgWrapper {
+    display: inline-block;
+    position: relative;
+    background: rgb(153, 153, 153);
+    overflow: hidden;
+    width: 100%;
+    height: 225px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .imgWrapper:hover {
+    background-color: rgb(85, 85, 85);
+  }
+
+  .imgWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formContent > label {
+    font-size: 1.25rem;
+    font-family: avenirs;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .formContent > input {
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .formContent > input:focus {
+    outline: 1.5px solid #2e86de;
+    border: none;
+  }
+
+  .formContent > button {
+    height: 2.5rem;
+    font-size: 1rem;
+    background-color: #2e86de;
+    cursor: pointer;
+  }
+
+  .formContent > button:hover {
+    background-color: rgb(37, 88, 216);
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+}

@@ -1,0 +1,2641 @@
+.homeContainer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 75px;
+}
+
+.homeTitle {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.bookmarkTitle {
+  margin: 0 0 2rem 0;
+  font-size: 3rem;
+}
+
+.searchContainer {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchContainer > input {
+  box-sizing: border-box;
+  width: 80%;
+  height: 3rem;
+  padding: 0 10px;
+  border: #6c6c6c solid 1px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.searchContainer > input:focus {
+  outline: none;
+  border: #2e86de solid 2px;
+}
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5%;
+}
+
+.cardContent {
+  width: 23.125%;
+  height: auto;
+  display: flex;
+  position: relative;
+  margin-bottom: 2rem;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+
+.bookmark {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.bookmark:hover {
+  background-color: rgb(196, 192, 192);
+}
+
+.bookmark > img {
+  height: 32.5px;
+}
+
+.menuEdit {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  z-index: 2;
+}
+
+.menuImg {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.menuImg:hover {
+  background-color: rgb(196, 192, 192);
+}
+
+.menuImg > img {
+  height: 20px;
+}
+
+.thumbnail {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.thumbnail > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%;
+}
+
+.love {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0 0 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.loveWrapper {
+  height: 1.25rem;
+  width: auto;
+}
+
+.loveWrapper > img {
+  height: 1.25rem;
+}
+
+.love > p {
+  margin: 0;
+  font-family: roboto;
+}
+
+.cardDesc {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.cardDesc > h2 {
+  margin: 0 0 5px 0;
+  overflow: hidden;
+  font-family: roboto;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.cardDesc > p {
+  margin: 0 0 15px 0;
+  font-size: 0.85rem;
+  font-family: avenirs;
+  color: gray;
+}
+
+.cardDesc > .h4 {
+  margin: 0;
+  line-height: 1.2;
+  height: 5.8rem;
+  font-size: 1rem;
+  font-family: roboto;
+  font-weight: 400;
+  color: #6c6c6c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.delModal {
+  width: 100%;
+  height: 100vh;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000050;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.modalCard {
+  background-color: white;
+  width: 30%;
+}
+
+.modalCard > p {
+  padding: 0 10px;
+  font-family: roboto;
+}
+
+.delModalBtn {
+  width: 100%;
+  height: auto;
+}
+
+.delModalBtn > button {
+  width: 50%;
+  border: none;
+  height: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+.delCancel {
+  background-color: #2e86de;
+}
+
+.delCancel:hover {
+  background-color: #216bb6;
+}
+
+.delYes {
+  background-color: rgb(235, 39, 39);
+}
+
+.delYes:hover {
+  background-color: rgb(170, 13, 13);
+}
+
+.nopost {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nopost > img {
+  width: 35%;
+}
+
+.nomark {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nomark > img {
+  width: 35%;
+}
+
+.nomark > h1 {
+  margin: 0.5rem 0 0 0;
+  font-size: 2.5rem;
+  color: #2e86de;
+}
+
+@media only screen and (max-width: 1440px) {
+  .homeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+  }
+
+  .homeTitle {
+    margin: 0;
+    font-size: 3rem;
+  }
+
+  .bookmarkTitle {
+    margin: 0 0 2rem 0;
+    font-size: 2.5rem;
+  }
+
+  .searchContainer {
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchContainer > input {
+    box-sizing: border-box;
+    width: 80%;
+    height: 3rem;
+    padding: 0 10px;
+    border: #6c6c6c solid 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .searchContainer > input:focus {
+    outline: none;
+    border: #2e86de solid 2px;
+  }
+
+  .cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5%;
+  }
+
+  .cardContent {
+    width: 23.125%;
+    height: auto;
+    display: flex;
+    position: relative;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .bookmark {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .bookmark:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .bookmark > img {
+    height: 25px;
+  }
+
+  .menuEdit {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    z-index: 2;
+  }
+
+  .menuImg {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .menuImg:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .menuImg > img {
+    height: 17.5px;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .love {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .loveWrapper {
+    height: 1.15rem;
+    width: auto;
+  }
+
+  .loveWrapper > img {
+    height: 1.15rem;
+  }
+
+  .love > p {
+    margin: 0;
+    font-family: roboto;
+    font-size: 0.9rem;
+  }
+
+  .cardDesc {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .cardDesc > h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .cardDesc > p {
+    margin: 0 0 10px 0;
+    font-size: 0.75rem;
+    font-family: avenirs;
+    color: gray;
+  }
+
+  .cardDesc > .h4 {
+    margin: 0;
+    line-height: 1.2;
+    height: 5rem;
+    font-size: 0.85rem;
+    font-family: roboto;
+    font-weight: 400;
+    color: #6c6c6c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .delModal {
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .modalCard {
+    background-color: white;
+    width: 35%;
+  }
+
+  .modalCard > p {
+    padding: 0 10px;
+    font-family: roboto;
+  }
+
+  .delModalBtn {
+    width: 100%;
+    height: auto;
+  }
+
+  .delModalBtn > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .delCancel {
+    background-color: #2e86de;
+  }
+
+  .delCancel:hover {
+    background-color: #216bb6;
+  }
+
+  .delYes {
+    background-color: rgb(235, 39, 39);
+  }
+
+  .delYes:hover {
+    background-color: rgb(170, 13, 13);
+  }
+
+  .nopost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nopost > img {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .homeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 40px;
+  }
+
+  .homeTitle {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  .bookmarkTitle {
+    margin: 0 0 2rem 0;
+    font-size: 2.25rem;
+  }
+
+  .searchContainer {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchContainer > input {
+    box-sizing: border-box;
+    width: 90%;
+    height: 2.5rem;
+    padding: 0 10px;
+    border: #6c6c6c solid 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .searchContainer > input:focus {
+    outline: none;
+    border: #2e86de solid 2px;
+  }
+
+  .cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+
+  .cardContent {
+    width: 23.5%;
+    height: auto;
+    display: flex;
+    position: relative;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .bookmark {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .bookmark:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .bookmark > img {
+    height: 25px;
+  }
+
+  .menuEdit {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    right: 7px;
+    z-index: 2;
+  }
+
+  .menuImg {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .menuImg:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .menuImg > img {
+    height: 17px;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .love {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .loveWrapper {
+    height: 1.15rem;
+    width: auto;
+  }
+
+  .loveWrapper > img {
+    height: 1.15rem;
+  }
+
+  .love > p {
+    margin: 0;
+    font-family: roboto;
+    font-size: 0.9rem;
+  }
+
+  .cardDesc {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .cardDesc > h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .cardDesc > p {
+    margin: 0 0 10px 0;
+    font-size: 0.75rem;
+    font-family: avenirs;
+    color: gray;
+  }
+
+  .cardDesc > .h4 {
+    margin: 0;
+    line-height: 1.2;
+    height: 4.5rem;
+    font-size: 0.75rem;
+    font-family: roboto;
+    font-weight: 400;
+    color: #6c6c6c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .delModal {
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .modalCard {
+    background-color: white;
+    width: 40%;
+  }
+
+  .modalCard > p {
+    padding: 0 10px;
+    font-family: roboto;
+  }
+
+  .delModalBtn {
+    width: 100%;
+    height: auto;
+  }
+
+  .delModalBtn > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .delCancel {
+    background-color: #2e86de;
+  }
+
+  .delCancel:hover {
+    background-color: #216bb6;
+  }
+
+  .delYes {
+    background-color: rgb(235, 39, 39);
+  }
+
+  .delYes:hover {
+    background-color: rgb(170, 13, 13);
+  }
+
+  .nopost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nopost > img {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .homeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 35px;
+  }
+
+  .homeTitle {
+    margin: 0;
+    font-size: 2.25rem;
+  }
+
+  .searchContainer {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchContainer > input {
+    box-sizing: border-box;
+    width: 90%;
+    height: 2.5rem;
+    padding: 0 10px;
+    border: #6c6c6c solid 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .searchContainer > input:focus {
+    outline: none;
+    border: #2e86de solid 2px;
+  }
+
+  .cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+
+  .cardContent {
+    width: 32%;
+    height: auto;
+    display: flex;
+    position: relative;
+    margin-bottom: 1.25rem;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .bookmark {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .bookmark:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .bookmark > img {
+    height: 22.5px;
+  }
+
+  .menuEdit {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 55px;
+    right: 7px;
+    z-index: 2;
+  }
+
+  .menuImg {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .menuImg:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .menuImg > img {
+    height: 15px;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .love {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .loveWrapper {
+    height: 1.15rem;
+    width: auto;
+  }
+
+  .loveWrapper > img {
+    height: 1.15rem;
+  }
+
+  .love > p {
+    margin: 0;
+    font-family: roboto;
+    font-size: 0.9rem;
+  }
+
+  .cardDesc {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .cardDesc > h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .cardDesc > p {
+    margin: 0 0 10px 0;
+    font-size: 0.75rem;
+    font-family: avenirs;
+    color: gray;
+  }
+
+  .cardDesc > .h4 {
+    margin: 0;
+    line-height: 1.2;
+    height: 4.5rem;
+    font-size: 0.75rem;
+    font-family: roboto;
+    font-weight: 400;
+    color: #6c6c6c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .delModal {
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .modalCard {
+    background-color: white;
+    width: 50%;
+  }
+
+  .modalCard > p {
+    padding: 0 10px;
+    font-family: roboto;
+  }
+
+  .delModalBtn {
+    width: 100%;
+    height: auto;
+  }
+
+  .delModalBtn > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .delCancel {
+    background-color: #2e86de;
+  }
+
+  .delCancel:hover {
+    background-color: #216bb6;
+  }
+
+  .delYes {
+    background-color: rgb(235, 39, 39);
+  }
+
+  .delYes:hover {
+    background-color: rgb(170, 13, 13);
+  }
+
+  .nopost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nopost > img {
+    width: 55%;
+  }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 40%;
+  }
+
+  .nomark > h1 {
+    margin: 0.25rem 0 0 0;
+    font-size: 2.5rem;
+    color: #2e86de;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .homeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 30px;
+  }
+
+  .homeTitle {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .searchContainer {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchContainer > input {
+    box-sizing: border-box;
+    width: 90%;
+    height: 2.25rem;
+    padding: 0 10px;
+    border: #6c6c6c solid 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .searchContainer > input:focus {
+    outline: none;
+    border: #2e86de solid 2px;
+  }
+
+  .cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+
+  .cardContent {
+    width: 32%;
+    height: auto;
+    display: flex;
+    position: relative;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .bookmark {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .bookmark:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .bookmark > img {
+    height: 22.5px;
+  }
+
+  .menuEdit {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 55px;
+    right: 7px;
+    z-index: 2;
+  }
+
+  .menuImg {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .menuImg:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .menuImg > img {
+    height: 15px;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 185px;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .love {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .loveWrapper {
+    height: 1rem;
+    width: auto;
+  }
+
+  .loveWrapper > img {
+    height: 1rem;
+  }
+
+  .love > p {
+    margin: 0;
+    font-family: roboto;
+    font-size: 0.75rem;
+  }
+
+  .cardDesc {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .cardDesc > h2 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .cardDesc > p {
+    margin: 0 0 10px 0;
+    font-size: 0.65rem;
+    font-family: avenirs;
+    color: gray;
+  }
+
+  .cardDesc > .h4 {
+    margin: 0;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    height: 4rem;
+    font-family: roboto;
+    font-weight: 400;
+    color: #6c6c6c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .delModal {
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .modalCard {
+    background-color: white;
+    width: 60%;
+  }
+
+  .modalCard > p {
+    padding: 0 10px;
+    font-family: roboto;
+  }
+
+  .delModalBtn {
+    width: 100%;
+    height: auto;
+  }
+
+  .delModalBtn > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .delCancel {
+    background-color: #2e86de;
+  }
+
+  .delCancel:hover {
+    background-color: #216bb6;
+  }
+
+  .delYes {
+    background-color: rgb(235, 39, 39);
+  }
+
+  .delYes:hover {
+    background-color: rgb(170, 13, 13);
+  }
+
+  .nopost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nopost > img {
+    width: 55%;
+  }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 45%;
+  }
+
+  .nomark > h1 {
+    margin: 0.5rem 0 0 0;
+    font-size: 2.5rem;
+    color: #2e86de;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .homeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 25px;
+  }
+
+  .homeTitle {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .searchContainer {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchContainer > input {
+    box-sizing: border-box;
+    width: 90%;
+    height: 2.25rem;
+    padding: 0 10px;
+    border: #6c6c6c solid 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .searchContainer > input:focus {
+    outline: none;
+    border: #2e86de solid 2px;
+  }
+
+  .cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+
+  .cardContent {
+    width: 32%;
+    height: auto;
+    display: flex;
+    position: relative;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .bookmark {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .bookmark:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .bookmark > img {
+    height: 20px;
+  }
+
+  .menuEdit {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 125px;
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    z-index: 2;
+  }
+
+  .menuImg {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .menuImg:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .menuImg > img {
+    height: 15px;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .love {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .loveWrapper {
+    height: 1rem;
+    width: auto;
+  }
+
+  .loveWrapper > img {
+    height: 1rem;
+  }
+
+  .love > p {
+    margin: 0;
+    font-family: roboto;
+    font-size: 0.75rem;
+  }
+
+  .cardDesc {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.85rem;
+  }
+
+  .cardDesc > h2 {
+    margin: 0 0 5px 0;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .cardDesc > p {
+    margin: 0 0 6px 0;
+    font-size: 0.6rem;
+    font-family: avenirs;
+    color: gray;
+  }
+
+  .cardDesc > .h4 {
+    margin: 0;
+    font-size: 0.65rem;
+    line-height: 1.2;
+    height: 3.8rem;
+    font-family: roboto;
+    font-weight: 400;
+    color: #6c6c6c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .delModal {
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .modalCard {
+    background-color: white;
+    width: 65%;
+  }
+
+  .modalCard > p {
+    padding: 0 10px;
+    font-family: roboto;
+  }
+
+  .delModalBtn {
+    width: 100%;
+    height: auto;
+  }
+
+  .delModalBtn > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .delCancel {
+    background-color: #2e86de;
+  }
+
+  .delCancel:hover {
+    background-color: #216bb6;
+  }
+
+  .delYes {
+    background-color: rgb(235, 39, 39);
+  }
+
+  .delYes:hover {
+    background-color: rgb(170, 13, 13);
+  }
+
+  .nopost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nopost > img {
+    width: 65%;
+  }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 50%;
+  }
+
+  .nomark > h1 {
+    margin: 0.5rem 0 0 0;
+    font-size: 2.5rem;
+    color: #2e86de;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .homeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 25px;
+  }
+
+  .homeTitle {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .bookmarkTitle {
+    margin: 0 0 2rem 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .searchContainer {
+    width: 100%;
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchContainer > input {
+    box-sizing: border-box;
+    width: 90%;
+    height: 2.25rem;
+    padding: 0 10px;
+    border: #6c6c6c solid 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .searchContainer > input:focus {
+    outline: none;
+    border: #2e86de solid 2px;
+  }
+
+  .cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+  }
+
+  .cardContent {
+    width: 48.5%;
+    height: auto;
+    display: flex;
+    position: relative;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .bookmark {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .bookmark:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .bookmark > img {
+    height: 20px;
+  }
+
+  .menuEdit {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 140px;
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    z-index: 2;
+  }
+
+  .menuImg {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .menuImg:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .menuImg > img {
+    height: 15px;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .love {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .loveWrapper {
+    height: 1rem;
+    width: auto;
+  }
+
+  .loveWrapper > img {
+    height: 1rem;
+  }
+
+  .love > p {
+    margin: 0;
+    font-family: roboto;
+    font-size: 0.75rem;
+  }
+
+  .cardDesc {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.85rem;
+  }
+
+  .cardDesc > h2 {
+    margin: 0 0 5px 0;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .cardDesc > p {
+    margin: 0 0 6px 0;
+    font-size: 0.6rem;
+    font-family: avenirs;
+    color: gray;
+  }
+
+  .cardDesc > .h4 {
+    margin: 0;
+    font-size: 0.65rem;
+    line-height: 1.2;
+    height: 3.8rem;
+    font-family: roboto;
+    font-weight: 400;
+    color: #6c6c6c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .delModal {
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .modalCard {
+    background-color: white;
+    width: 75%;
+  }
+
+  .modalCard > p {
+    padding: 0 10px;
+    font-family: roboto;
+  }
+
+  .delModalBtn {
+    width: 100%;
+    height: auto;
+  }
+
+  .delModalBtn > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .delCancel {
+    background-color: #2e86de;
+  }
+
+  .delCancel:hover {
+    background-color: #216bb6;
+  }
+
+  .delYes {
+    background-color: rgb(235, 39, 39);
+  }
+
+  .delYes:hover {
+    background-color: rgb(170, 13, 13);
+  }
+
+  .nopost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nopost > img {
+    width: 75%;
+  }
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 75%;
+  }
+
+  .nomark > h1 {
+    margin: 0.25rem 0 0 0;
+    font-size: 2rem;
+    color: #2e86de;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .homeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+  }
+
+  .homeTitle {
+    margin: 0;
+    font-size: 2.25rem;
+    text-align: center;
+  }
+
+  .searchContainer {
+    width: 100%;
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchContainer > input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.25rem;
+    padding: 0 10px;
+    border: #6c6c6c solid 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .searchContainer > input:focus {
+    outline: none;
+    border: #2e86de solid 2px;
+  }
+
+  .cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+
+  .cardContent {
+    width: 49%;
+    height: auto;
+    display: flex;
+    position: relative;
+    margin-bottom: 0.75rem;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .bookmark {
+    height: 27.5px;
+    width: 27.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .bookmark:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .bookmark > img {
+    height: 17.5px;
+  }
+
+  .menuEdit {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 120px;
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    z-index: 2;
+  }
+
+  .menuImg {
+    height: 27.5px;
+    width: 27.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .menuImg:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .menuImg > img {
+    height: 15px;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 155px;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .love {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .loveWrapper {
+    height: 1rem;
+    width: auto;
+  }
+
+  .loveWrapper > img {
+    height: 1rem;
+  }
+
+  .love > p {
+    margin: 0;
+    font-family: roboto;
+    font-size: 0.75rem;
+  }
+
+  .cardDesc {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem;
+  }
+
+  .cardDesc > h2 {
+    margin: 0 0 5px 0;
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .cardDesc > p {
+    margin: 0;
+    font-size: 0.5rem;
+    font-family: avenirs;
+    color: gray;
+  }
+
+  .cardDesc > .h4 {
+    margin: 0;
+    font-size: 0.6rem;
+    line-height: 1.2;
+    height: 3.5rem;
+    font-family: roboto;
+    font-weight: 400;
+    color: #6c6c6c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .delModal {
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .modalCard {
+    background-color: white;
+    width: 85%;
+  }
+
+  .modalCard > p {
+    padding: 0 10px;
+    font-family: roboto;
+  }
+
+  .delModalBtn {
+    width: 100%;
+    height: auto;
+  }
+
+  .delModalBtn > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .delCancel {
+    background-color: #2e86de;
+  }
+
+  .delCancel:hover {
+    background-color: #216bb6;
+  }
+
+  .delYes {
+    background-color: rgb(235, 39, 39);
+  }
+
+  .delYes:hover {
+    background-color: rgb(170, 13, 13);
+  }
+
+  .nopost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nopost > img {
+    width: 100%;
+  }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 100%;
+  }
+
+  .nomark > h1 {
+    margin: 0.5rem 0 0 0;
+    font-size: 2.5rem;
+    color: #2e86de;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .homeContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 15px;
+  }
+
+  .homeTitle {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .searchContainer {
+    width: 100%;
+    padding: 27.5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchContainer > input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.25rem;
+    padding: 0 10px;
+    border: #6c6c6c solid 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .searchContainer > input:focus {
+    outline: none;
+    border: #2e86de solid 2px;
+  }
+
+  .cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+
+  .cardContent {
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: relative;
+    margin-bottom: 0.75rem;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .bookmark {
+    height: 32.5px;
+    width: 32.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .bookmark:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .bookmark > img {
+    height: 20px;
+  }
+
+  .menuEdit {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 145px;
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    z-index: 2;
+  }
+
+  .menuImg {
+    height: 27.5px;
+    width: 27.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .menuImg:hover {
+    background-color: rgb(196, 192, 192);
+  }
+
+  .menuImg > img {
+    height: 15px;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 185px;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .love {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .loveWrapper {
+    height: 1rem;
+    width: auto;
+  }
+
+  .loveWrapper > img {
+    height: 1rem;
+  }
+
+  .love > p {
+    margin: 0;
+    font-family: roboto;
+    font-size: 0.75rem;
+  }
+
+  .cardDesc {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.85rem;
+  }
+
+  .cardDesc > h2 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .cardDesc > p {
+    margin: 0;
+    font-size: 0.65rem;
+    font-family: avenirs;
+    color: gray;
+  }
+
+  .cardDesc > .h4 {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    height: 4.3rem;
+    font-family: roboto;
+    font-weight: 400;
+    color: #6c6c6c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .delModal {
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .modalCard {
+    background-color: white;
+    width: 90%;
+  }
+
+  .modalCard > p {
+    padding: 0 10px;
+    font-family: roboto;
+  }
+
+  .delModalBtn {
+    width: 100%;
+    height: auto;
+  }
+
+  .delModalBtn > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .delCancel {
+    background-color: #2e86de;
+  }
+
+  .delCancel:hover {
+    background-color: #216bb6;
+  }
+
+  .delYes {
+    background-color: rgb(235, 39, 39);
+  }
+
+  .delYes:hover {
+    background-color: rgb(170, 13, 13);
+  }
+
+  .nopost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nopost > img {
+    width: 100%;
+  }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 100%;
+  }
+
+  .nomark > h1 {
+    margin: 0.5rem 0 0 0;
+    font-size: 2rem;
+    color: #2e86de;
+  }
+}

@@ -1,0 +1,339 @@
+.navWrapper {
+  padding: 30px 125px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 20px 5px gray;
+}
+
+.navWrapper > img {
+  height: 75px;
+  cursor: pointer;
+}
+
+.profileWrapper {
+  display: inline-block;
+  position: relative;
+  height: 75px;
+  width: 75px;
+  overflow: hidden;
+  cursor: pointer;
+  border: solid 3px #2e86de;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.profileWrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%;
+}
+
+@media only screen and (max-width: 1440px) {
+  .navWrapper {
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 20px 5px gray;
+  }
+
+  .navWrapper > img {
+    height: 65px;
+    cursor: pointer;
+  }
+
+  .profileWrapper {
+    display: inline-block;
+    position: relative;
+    height: 65px;
+    width: 65px;
+    overflow: hidden;
+    cursor: pointer;
+    border: solid 3px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .profileWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .navWrapper {
+    padding: 25px 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 20px 5px gray;
+  }
+
+  .navWrapper > img {
+    height: 60px;
+    cursor: pointer;
+  }
+
+  .profileWrapper {
+    display: inline-block;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    cursor: pointer;
+    border: solid 3px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .profileWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .navWrapper {
+    padding: 25px 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 20px 5px gray;
+  }
+
+  .navWrapper > img {
+    height: 60px;
+    cursor: pointer;
+  }
+
+  .profileWrapper {
+    display: inline-block;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    cursor: pointer;
+    border: solid 3px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .profileWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .navWrapper {
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 20px 5px gray;
+  }
+
+  .navWrapper > img {
+    height: 55px;
+    cursor: pointer;
+  }
+
+  .profileWrapper {
+    display: inline-block;
+    position: relative;
+    height: 55px;
+    width: 55px;
+    overflow: hidden;
+    cursor: pointer;
+    border: solid 3px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .profileWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navWrapper {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 20px 5px gray;
+  }
+
+  .navWrapper > img {
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .profileWrapper {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    border: solid 3px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .profileWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navWrapper {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 20px 5px gray;
+  }
+
+  .navWrapper > img {
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .profileWrapper {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    border: solid 2px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .profileWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navWrapper {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 20px 5px gray;
+  }
+
+  .navWrapper > img {
+    height: 35px;
+    cursor: pointer;
+  }
+
+  .profileWrapper {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    border: solid 2px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .profileWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .navWrapper {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 20px 5px gray;
+  }
+
+  .navWrapper > img {
+    height: 32.5px;
+    cursor: pointer;
+  }
+
+  .profileWrapper {
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    width: 35px;
+    overflow: hidden;
+    cursor: pointer;
+    border: solid 2px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .profileWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}

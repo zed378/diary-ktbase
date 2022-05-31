@@ -1,0 +1,23 @@
+@font-face {
+  font-family: avenir;
+  src: url("../fonts/avenir.otf");
+}
+
+@font-face {
+  font-family: avenirs;
+  src: url("../fonts/avenirs.otf");
+}
+
+@font-face {
+  font-family: product;
+  src: url("../fonts/product.ttf");
+}
+
+@font-face {
+  font-family: roboto;
+  src: url("../fonts/roboto.ttf");
+}
+
+body {
+  font-family: avenir;
+}

@@ -1,0 +1,1364 @@
+.editContainer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 75px;
+  display: flex;
+  justify-content: center;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.editForm {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editForm > h1 {
+  color: #2e86de;
+  font-size: 2.5rem;
+}
+
+.editForm > label {
+  font-size: 1.5rem;
+  font-family: avenir;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.editForm > input {
+  width: 100%;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  padding: 0 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.editForm > input:focus {
+  outline: none;
+  border: 2px solid #2e86de;
+}
+
+.btnWrapper {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btnWrapper > button {
+  width: 50%;
+  border: none;
+  height: 3rem;
+  color: white;
+  font-size: 1rem;
+  font-family: avenirs;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.backBtn {
+  background-color: #ff1d1d;
+  border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -ms-border-radius: 5px 0 0 5px;
+  -o-border-radius: 5px 0 0 5px;
+}
+
+.backBtn:hover {
+  background-color: #5f0707;
+}
+
+.saveBtn {
+  background-color: #2e86de;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -ms-border-radius: 0 5px 5px 0;
+  -o-border-radius: 0 5px 5px 0;
+}
+
+.saveBtn:hover {
+  background-color: #1e5fa0;
+}
+
+.imgContainer {
+  display: inline-block;
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(214, 211, 211);
+  border: solid 5px #2e86de;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+}
+
+.imgContainer > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%;
+}
+
+.addText {
+  width: 350px;
+  height: 350px;
+  color: #2e86de00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 9;
+}
+
+.addText:hover {
+  color: white;
+  outline: 4px dashed #2e86de;
+  background-color: gray;
+}
+
+@media only screen and (max-width: 1440px) {
+  .editContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 75px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .editForm {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editForm > h1 {
+    color: #2e86de;
+    font-size: 2.25rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .editForm > label {
+    font-size: 1.5rem;
+    font-family: avenir;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .editForm > input {
+    width: 100%;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .editForm > input:focus {
+    outline: none;
+    border: 2px solid #2e86de;
+  }
+
+  .btnWrapper {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2.75rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    height: 375px;
+    width: 375px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(214, 211, 211);
+    border: solid 5px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .addText {
+    width: 350px;
+    height: 350px;
+    color: #2e86de00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 9;
+  }
+
+  .addText:hover {
+    color: white;
+    outline: 4px dashed #2e86de;
+    background-color: gray;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .editContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .editForm {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editForm > h1 {
+    color: #2e86de;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .editForm > label {
+    font-size: 1.25rem;
+    font-family: avenir;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .editForm > input {
+    width: 100%;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .editForm > input:focus {
+    outline: none;
+    border: 2px solid #2e86de;
+  }
+
+  .btnWrapper {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2.75rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    height: 350px;
+    width: 350px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(214, 211, 211);
+    border: solid 5px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .addText {
+    width: 325px;
+    height: 325px;
+    color: #2e86de00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 9;
+  }
+
+  .addText:hover {
+    color: white;
+    outline: 4px dashed #2e86de;
+    background-color: gray;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .editContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .editForm {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editForm > h1 {
+    color: #2e86de;
+    font-size: 1.75rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .editForm > label {
+    font-size: 1.25rem;
+    font-family: avenir;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .editForm > input {
+    width: 100%;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .editForm > input:focus {
+    outline: none;
+    border: 2px solid #2e86de;
+  }
+
+  .btnWrapper {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2.5rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    height: 325px;
+    width: 325px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(214, 211, 211);
+    border: solid 5px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .addText {
+    width: 300px;
+    height: 300px;
+    color: #2e86de00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 9;
+  }
+
+  .addText:hover {
+    color: white;
+    outline: 4px dashed #2e86de;
+    background-color: gray;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .editContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .editForm {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editForm > h1 {
+    color: #2e86de;
+    font-size: 1.75rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .editForm > label {
+    font-size: 1.25rem;
+    font-family: avenir;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .editForm > input {
+    width: 100%;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .editForm > input:focus {
+    outline: none;
+    border: 2px solid #2e86de;
+  }
+
+  .btnWrapper {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2.25rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(214, 211, 211);
+    border: solid 5px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .addText {
+    width: 275px;
+    height: 275px;
+    color: #2e86de00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 9;
+  }
+
+  .addText:hover {
+    color: white;
+    outline: 4px dashed #2e86de;
+    background-color: gray;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .editContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .editForm {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editForm > h1 {
+    color: #2e86de;
+    font-size: 1.65rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .editForm > label {
+    font-size: 1.25rem;
+    font-family: avenir;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .editForm > input {
+    width: 100%;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .editForm > input:focus {
+    outline: none;
+    border: 2px solid #2e86de;
+  }
+
+  .btnWrapper {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    height: 275px;
+    width: 275px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(214, 211, 211);
+    border: solid 5px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .addText {
+    width: 275px;
+    height: 275px;
+    color: #2e86de00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 9;
+  }
+
+  .addText:hover {
+    color: white;
+    outline: 4px dashed #2e86de;
+    background-color: gray;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .editContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .editForm {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editForm > h1 {
+    color: #2e86de;
+    font-size: 1.65rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .editForm > label {
+    font-size: 1.25rem;
+    font-family: avenir;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .editForm > input {
+    width: 100%;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .editForm > input:focus {
+    outline: none;
+    border: 2px solid #2e86de;
+  }
+
+  .btnWrapper {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    height: 275px;
+    width: 275px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(214, 211, 211);
+    border: solid 5px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .addText {
+    width: 275px;
+    height: 275px;
+    color: #2e86de00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 9;
+  }
+
+  .addText:hover {
+    color: white;
+    outline: 4px dashed #2e86de;
+    background-color: gray;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .editContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .editForm {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editForm > h1 {
+    color: #2e86de;
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .editForm > label {
+    font-size: 1.25rem;
+    font-family: avenir;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .editForm > input {
+    width: 100%;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .editForm > input:focus {
+    outline: none;
+    border: 2px solid #2e86de;
+  }
+
+  .btnWrapper {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    height: 275px;
+    width: 275px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(214, 211, 211);
+    border: solid 5px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .addText {
+    width: 275px;
+    height: 275px;
+    color: #2e86de00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 9;
+  }
+
+  .addText:hover {
+    color: white;
+    outline: 4px dashed #2e86de;
+    background-color: gray;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .editContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .editForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editForm > h1 {
+    color: #2e86de;
+    font-size: 1.25rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .editForm > label {
+    font-size: 1.25rem;
+    font-family: avenir;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .editForm > input {
+    width: 100%;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+
+  .editForm > input:focus {
+    outline: none;
+    border: 2px solid #2e86de;
+  }
+
+  .btnWrapper {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .btnWrapper > button {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    font-family: avenirs;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .backBtn {
+    background-color: #ff1d1d;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -ms-border-radius: 5px 0 0 5px;
+    -o-border-radius: 5px 0 0 5px;
+  }
+
+  .backBtn:hover {
+    background-color: #5f0707;
+  }
+
+  .saveBtn {
+    background-color: #2e86de;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
+  }
+
+  .saveBtn:hover {
+    background-color: #1e5fa0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    height: 275px;
+    width: 275px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(214, 211, 211);
+    border: solid 5px #2e86de;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .addText {
+    width: 275px;
+    height: 275px;
+    color: #2e86de00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 9;
+  }
+
+  .addText:hover {
+    color: white;
+    outline: 4px dashed #2e86de;
+    background-color: gray;
+  }
+}
