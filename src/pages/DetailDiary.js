@@ -97,7 +97,24 @@ function DetailDiary() {
 
   const setCommentMenu = async (commentId) => {
     try {
-      await API.get(`/comment-menu/${commentId}`);
+      const { data, error } = await kontenbase
+        .service("Comments")
+        .getById(commentId);
+      console.log(data);
+
+      if (data.isClick === "0") {
+        const { data, error } = await kontenbase
+          .service("Comments")
+          .updateById(commentId, {
+            isClick: "1",
+          });
+      } else {
+        const { data, error } = await kontenbase
+          .service("Comments")
+          .updateById(commentId, {
+            isClick: "0",
+          });
+      }
 
       getComments();
     } catch (error) {
@@ -120,12 +137,13 @@ function DetailDiary() {
     );
 
     setModal(modal);
-    console.log(form);
   };
 
   const delComment = async (commentId) => {
     try {
-      await API.delete(`/comment/${commentId}`);
+      const { data, error } = await kontenbase
+        .service("Comments")
+        .deleteById(commentId);
       getComments();
     } catch (error) {
       console.log(error);
@@ -224,8 +242,8 @@ function DetailDiary() {
         <div className={cssModules.commentContainer}>
           {comments.length !== 0 ? (
             <>
-              {comments.map((item) => (
-                <div className={cssModules.commentData}>
+              {comments.map((item, index) => (
+                <div className={cssModules.commentData} key={index}>
                   <div className={cssModules.commentUserPic}>
                     <img
                       src={
@@ -251,7 +269,7 @@ function DetailDiary() {
                             onClick={() => setCommentMenu(item._id)}
                           />
 
-                          {item.menuClick === 1 ? (
+                          {item.isClick === "1" ? (
                             <div className={cssModules.menuContainer}>
                               <div
                                 className={cssModules.menuOption}

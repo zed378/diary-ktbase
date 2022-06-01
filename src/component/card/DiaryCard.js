@@ -211,7 +211,9 @@ function DiaryCard({ item, press }) {
 
   const delPost = async (id) => {
     try {
-      const { data, error } = await kontenbase.service("posts").deleteById(id);
+      const { data, error } = await kontenbase
+        .service("Diaries")
+        .deleteById(id);
 
       setModal(null);
       press();

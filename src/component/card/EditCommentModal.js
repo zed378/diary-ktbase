@@ -1,24 +1,31 @@
 // import package
 import { useState } from "react";
+import { KontenbaseClient } from "@kontenbase/sdk";
 
 // import assets
 import cssModules from "../../assets/css/DetailDiary.module.css";
 
-// import config
-import { API } from "../../config/api";
-
 function EditCommentModal({ press, param, val }) {
   const [form, setForm] = useState("");
 
+  const kontenbase = new KontenbaseClient({
+    apiKey: process.env.REACT_APP_API_KEY,
+  });
+
   const handleChange = (e) => {
     setForm(e.target.value);
+    console.log(form);
   };
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
 
-      await API.patch(`/comments/${param}/${form}`);
+      const { data, error } = await kontenbase
+        .service("Comments")
+        .updateById(param, {
+          comment: form,
+        });
 
       setForm("");
       press();
