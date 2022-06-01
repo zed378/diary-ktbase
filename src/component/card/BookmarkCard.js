@@ -30,7 +30,7 @@ function BookmarkCard({ item, press }) {
           _id: item.diariesId[0]._id,
         },
       });
-      console.log(data);
+      // console.log(data);
 
       setUser(data[0].userId[0].firstName + " " + data[0].userId[0].lastName);
     } catch (error) {
