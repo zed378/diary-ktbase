@@ -21,7 +21,6 @@ import EditCommentModal from "../component/card/EditCommentModal";
 // import config
 import { API } from "../config/api";
 import { UserContext } from "../context/UserContext";
-const path = "http://localhost:5000/uploads/profile/";
 
 function DetailDiary() {
   let navigate = useNavigate();
@@ -35,7 +34,7 @@ function DetailDiary() {
   const [likes, setLikes] = useState([]);
   const [comments, setComments] = useState([]);
   const [modal, setModal] = useState(null);
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState("");
 
   const [form, setForm] = useState({
     comment: "",
@@ -50,30 +49,32 @@ function DetailDiary() {
         },
       });
 
-      setUser(data);
+      setUser(data[0].userId[0].firstName + " " + data[0].userId[0].lastName);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(user);
 
   const getDiary = async () => {
     try {
       const { data, error } = await kontenbase.service("Diaries").getById(id);
-      console.log(data);
 
       setDiary(data);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(diary);
 
   const getLikes = async () => {
     try {
-      const response = await API.get(`/get-like/${id}`);
+      const { data, error } = await kontenbase.service("Likes").find({
+        lookup: { _id: "*" },
+        where: {
+          diariesId: id,
+        },
+      });
 
-      setLikes(response.data.data);
+      setLikes(data);
     } catch (error) {
       console.log(error);
     }
@@ -81,9 +82,14 @@ function DetailDiary() {
 
   const getComments = async () => {
     try {
-      const response = await API.get(`/comments/${id}`);
+      const { data, error } = await kontenbase.service("Comments").find({
+        lookup: ["userId"],
+        where: {
+          diariesId: id,
+        },
+      });
 
-      setComments(response.data.data);
+      setComments(data);
     } catch (error) {
       console.log(error);
     }
@@ -137,15 +143,12 @@ function DetailDiary() {
     try {
       e.preventDefault();
 
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-
-      const body = JSON.stringify(form);
-
-      await API.post(`/comment/${state.user.id}/${diary.id}`, body, config);
+      const { data, error } = await kontenbase.service("Comments").create({
+        userId: [localStorage.id],
+        diariesId: [id],
+        comment: form.comment,
+      });
+      console.log(data);
 
       getComments();
       setForm({ comment: "" });
@@ -155,10 +158,10 @@ function DetailDiary() {
   };
 
   useEffect(() => {
+    getUser();
     getDiary();
     getLikes();
     getComments();
-    getUser();
   }, []);
 
   return (
@@ -176,9 +179,7 @@ function DetailDiary() {
             {" "}
             {dateFormat(diary.createdAt, "dddd, d mmmm, yyyy")}
           </p>
-          <p className={cssModules.infoUser}>
-            {user[0].userId[0].firstName} {user[0].userId[0].lastName}
-          </p>
+          <p className={cssModules.infoUser}>{user}</p>
         </div>
 
         <div className={cssModules.sumAll}>
@@ -205,7 +206,7 @@ function DetailDiary() {
 
       <div className={cssModules.commentSection}>
         <h1>All Comments</h1>
-        {state.isLogin ? (
+        {localStorage.token ? (
           <form onSubmit={handleSubmit} className={cssModules.commentPost}>
             <textarea
               name="comment"
@@ -226,39 +227,51 @@ function DetailDiary() {
               {comments.map((item) => (
                 <div className={cssModules.commentData}>
                   <div className={cssModules.commentUserPic}>
-                    <img src={path + item.user.photo} alt={item.user.photo} />
+                    <img
+                      src={
+                        item.userId[0].photo ||
+                        process.env.REACT_APP_DEFAULT_PROFILE
+                      }
+                      alt={
+                        item.userId[0].photo ||
+                        process.env.REACT_APP_DEFAULT_PROFILE
+                      }
+                    />
                   </div>
 
                   <div className={cssModules.commentUserInfo}>
                     <h4>
-                      {item.user.name}{" "}
-                      {state.isLogin && state.user.id === item.user.id ? (
+                      {item.userId[0].firstName} {item.userId[0].lastName}
+                      {localStorage.token &&
+                      localStorage.id === item.userId[0]._id ? (
                         <>
                           <img
                             src={dots}
                             alt={dots}
-                            onClick={() => setCommentMenu(item.id)}
+                            onClick={() => setCommentMenu(item._id)}
                           />
 
                           {item.menuClick === 1 ? (
                             <div className={cssModules.menuContainer}>
                               <div
                                 className={cssModules.menuOption}
-                                onClick={() => modalEdit(item.id, item.comment)}
+                                onClick={() =>
+                                  modalEdit(item._id, item.comment)
+                                }
                               >
                                 <img src={edit} alt={edit} />
                                 <p>Edit</p>
                               </div>
                               <div
                                 className={cssModules.menuOption}
-                                onClick={() => delComment(item.id)}
+                                onClick={() => delComment(item._id)}
                               >
                                 <img src={trash} alt={trash} />
                                 <p>Delete</p>
                               </div>
                               <div
                                 className={cssModules.menuOption}
-                                onClick={() => setCommentMenu(item.id)}
+                                onClick={() => setCommentMenu(item._id)}
                               >
                                 <img src={close} alt={close} />
                                 <p>Close</p>

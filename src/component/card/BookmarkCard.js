@@ -14,7 +14,7 @@ import cssModules from "../../assets/css/Home.module.css";
 function BookmarkCard({ item, press }) {
   let navigate = useNavigate();
 
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState();
   const [marked, setMarked] = useState([]);
   const [findMark, setFindMark] = useState(null);
 
@@ -30,12 +30,14 @@ function BookmarkCard({ item, press }) {
           _id: item.diariesId[0]._id,
         },
       });
+      console.log(data);
 
-      setUser(data);
+      setUser(data[0].userId[0].firstName + " " + data[0].userId[0].lastName);
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(user);
 
   const setMark = async () => {
     try {
@@ -118,7 +120,7 @@ function BookmarkCard({ item, press }) {
         <h2>{item.diariesId[0].title}</h2>
         <p>
           {dateFormat(item.diariesId[0].createdAt, "dddd, d mmmm, yyyy")},{" "}
-          {user[0].userId[0].firstName} {user[0].userId[0].lastName}
+          {user}
         </p>
 
         <div

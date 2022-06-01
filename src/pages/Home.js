@@ -27,7 +27,6 @@ function Home() {
       console.log(error);
     }
   };
-  console.log(diaries);
 
   useEffect(() => {
     getDiaries();

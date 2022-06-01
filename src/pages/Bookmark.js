@@ -18,7 +18,7 @@ function Bookmark() {
   const getMarked = async () => {
     try {
       const { data, error } = await kontenbase.service("Bookmarks").find({
-        lookup: "diariesId",
+        lookup: "*",
         where: {
           userId: localStorage.id,
         },
@@ -39,7 +39,7 @@ function Bookmark() {
 
       <div className={cssModules.cardContainer}>
         {/* card */}
-        {!marked ? (
+        {marked.length === 0 ? (
           <div className={cssModules.nomark}>
             <img src={nomark} alt={nomark} />
             <h1>No Bookmark</h1>

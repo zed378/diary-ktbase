@@ -24,10 +24,10 @@ function DiaryCard({ item, press }) {
   };
   const [modal, setModal] = useState(null);
 
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState();
 
-  const [findMark, setFindMark] = useState(null);
-  const [findLike, setFindLike] = useState(null);
+  const [findMark, setFindMark] = useState([]);
+  const [findLike, setFindLike] = useState([]);
 
   const [marked, setMarked] = useState([]);
   const [like, setLike] = useState([]);
@@ -44,11 +44,14 @@ function DiaryCard({ item, press }) {
 
   const getUser = async () => {
     try {
-      const data = await axios.get(
-        `${process.env.REACT_APP_API_URL}/Users/${localStorage.id}`
-      );
+      const { data, error } = await kontenbase.service("Diaries").find({
+        lookup: ["userId"],
+        where: {
+          _id: item._id,
+        },
+      });
 
-      setUser(data.data);
+      setUser(data[0].userId[0].firstName + " " + data[0].userId[0].lastName);
     } catch (error) {
       console.log(error);
     }
@@ -56,18 +59,18 @@ function DiaryCard({ item, press }) {
 
   const setMark = async () => {
     try {
-      const data = await axios.get(
-        `${process.env.REACT_APP_API_URL}/Bookmarks?diariesId=${item._id}&userId=${localStorage.id}`
-      );
-      setFindMark(data.data[0]);
+      const { data, error } = await kontenbase.service("Bookmarks").find();
+      console.log(data);
+      setFindMark(data);
+      console.log(findMark);
 
-      if (data.data.length === 0) {
+      if (data.length === 0) {
         const { data, error } = await kontenbase.service("Bookmarks").create({
           userId: [localStorage.id],
           diariesId: [item._id],
         });
       } else {
-        delMark(findMark._id);
+        delMark(findMark[0]._id);
       }
 
       getmark();
@@ -87,7 +90,7 @@ function DiaryCard({ item, press }) {
       });
 
       setMarked(data);
-      setFindMark(null);
+      setFindMark([]);
     } catch (error) {
       console.log(error);
     }
@@ -97,7 +100,7 @@ function DiaryCard({ item, press }) {
     try {
       const { data, error } = await kontenbase
         .service("Bookmarks")
-        .deleteById(`${idMark}`);
+        .deleteById(idMark);
     } catch (error) {
       console.log(error);
     }
@@ -218,11 +221,11 @@ function DiaryCard({ item, press }) {
   };
 
   useEffect(() => {
+    getUser();
     getmark();
     getLike();
     getAllLike();
     getAllComment();
-    getUser();
   }, []);
 
   return (
@@ -357,8 +360,7 @@ function DiaryCard({ item, press }) {
         >
           <h2>{item.title}</h2>
           <p>
-            {dateFormat(item.createdAt, "dddd, d mmmm, yyyy")}, {user.firstName}{" "}
-            {user.lastName}
+            {dateFormat(item.createdAt, "dddd, d mmmm, yyyy")}, {user}
           </p>
 
           <div
