@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import dateFormat, { masks } from "dateformat";
 import DOMPurify from "dompurify";
+import { KontenbaseClient } from "@kontenbase/sdk";
 
 // import assets
 import love from "../assets/img/love.svg";
@@ -25,34 +26,48 @@ const path = "http://localhost:5000/uploads/profile/";
 function DetailDiary() {
   let navigate = useNavigate();
   const [state] = useContext(UserContext);
+  const kontenbase = new KontenbaseClient({
+    apiKey: process.env.REACT_APP_API_KEY,
+  });
 
   const { id } = useParams();
   const [diary, setDiary] = useState([]);
   const [likes, setLikes] = useState([]);
   const [comments, setComments] = useState([]);
   const [modal, setModal] = useState(null);
+  const [user, setUser] = useState([]);
 
   const [form, setForm] = useState({
     comment: "",
   });
 
-  const getDiary = async () => {
+  const getUser = async () => {
     try {
-      const response = await API.get(`/post/${id}`);
-
-      setDiary({
-        id: response.data.data.id,
-        userId: response.data.data.userId,
-        title: response.data.data.title,
-        thumbnail: response.data.data.thumbnail,
-        content: response.data.data.content,
-        createdAt: response.data.data.createdAt,
-        name: response.data.data.user.name,
+      const { data, error } = await kontenbase.service("Diaries").find({
+        lookup: ["userId"],
+        where: {
+          _id: id,
+        },
       });
+
+      setUser(data);
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(user);
+
+  const getDiary = async () => {
+    try {
+      const { data, error } = await kontenbase.service("Diaries").getById(id);
+      console.log(data);
+
+      setDiary(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  console.log(diary);
 
   const getLikes = async () => {
     try {
@@ -143,6 +158,7 @@ function DetailDiary() {
     getDiary();
     getLikes();
     getComments();
+    getUser();
   }, []);
 
   return (
@@ -160,7 +176,9 @@ function DetailDiary() {
             {" "}
             {dateFormat(diary.createdAt, "dddd, d mmmm, yyyy")}
           </p>
-          <p className={cssModules.infoUser}>{diary.name}</p>
+          <p className={cssModules.infoUser}>
+            {user[0].userId[0].firstName} {user[0].userId[0].lastName}
+          </p>
         </div>
 
         <div className={cssModules.sumAll}>
