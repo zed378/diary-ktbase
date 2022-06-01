@@ -28,7 +28,6 @@ function Bookmark() {
       console.log(error);
     }
   };
-  console.log(marked);
   useEffect(() => {
     getMarked();
   }, []);

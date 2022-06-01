@@ -37,7 +37,6 @@ function BookmarkCard({ item, press }) {
       console.log(error);
     }
   };
-  console.log(user);
 
   const setMark = async () => {
     try {
