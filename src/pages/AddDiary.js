@@ -11,9 +11,6 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import "../assets/css/ckeditor.css";
 import cssModules from "../assets/css/AddDiary.module.css";
 
-// import config
-import { API } from "../config/api";
-
 function AddDiary() {
   const navigate = useNavigate();
   const pic = () => {
@@ -27,6 +24,7 @@ function AddDiary() {
   // alert
   const [success, setSuccess] = useState(false);
   const [fail, setFail] = useState(false);
+  const [picFail, setPicFail] = useState(false);
 
   // store data
   const [form, setForm] = useState({
@@ -73,6 +71,9 @@ function AddDiary() {
           navigate("/");
           document.location.reload(true);
         }, 1500);
+      } else {
+        setPicFail(true);
+        setTimeout(() => setPicFail(false), 3000);
       }
     } catch (error) {
       setFail(true);
@@ -138,6 +139,23 @@ function AddDiary() {
             <></>
           )}
 
+          {picFail ? (
+            <h3
+              style={{
+                color: "red",
+                background: "#e0cecc",
+                textAlign: "center",
+                padding: "0.5rem 0",
+                fontSize: "1.15rem",
+                fontFamily: "avenirs",
+              }}
+            >
+              Add Image Before Submit, Please
+            </h3>
+          ) : (
+            <></>
+          )}
+
           <input
             type="file"
             name="thumbnail"
@@ -158,10 +176,6 @@ function AddDiary() {
             config={{
               placeholder:
                 "Type something here & make sure you only add thumbnail using that big box.",
-            }}
-            onReady={(editor) => {
-              // You can store the "editor" and use when it is needed.
-              console.log("Editor is ready to use!", editor);
             }}
             onChange={handleEditorChange}
           />

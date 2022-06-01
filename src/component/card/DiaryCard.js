@@ -42,15 +42,12 @@ function DiaryCard({ item, press }) {
       const { data, error } = await kontenbase.service("Diaries").find({
         lookup: "*",
       });
-      console.log(data);
 
       setUser(data[0].userId[0].firstName + " " + data[0].userId[0].lastName);
     } catch (error) {
       console.log(error);
-      console.log("Diary Card Get User");
     }
   };
-  console.log(user);
 
   const setMark = async () => {
     try {
@@ -76,7 +73,6 @@ function DiaryCard({ item, press }) {
       press();
     } catch (error) {
       console.log(error);
-      console.log("Diary Card Set Mark");
     }
   };
 
@@ -93,7 +89,6 @@ function DiaryCard({ item, press }) {
       setFindMark([]);
     } catch (error) {
       console.log(error);
-      console.log("Diary Card Get Mark");
     }
   };
 
@@ -116,7 +111,6 @@ function DiaryCard({ item, press }) {
         },
       });
       setFindLike(data);
-      console.log(findLike);
 
       if (findLike.length === 0) {
         const { data, error } = await kontenbase.service("Likes").create({
@@ -132,7 +126,6 @@ function DiaryCard({ item, press }) {
       press();
     } catch (error) {
       console.log(error);
-      console.log("Diary Card Click Like");
     }
   };
 
@@ -148,7 +141,6 @@ function DiaryCard({ item, press }) {
       setFindLike();
     } catch (error) {
       console.log(error);
-      console.log("Diary Card Get Like");
     }
   };
 
@@ -173,7 +165,6 @@ function DiaryCard({ item, press }) {
       setAllLike(data);
     } catch (error) {
       console.log(error);
-      console.log("Diary Card Get All Like");
     }
   };
 
@@ -188,7 +179,6 @@ function DiaryCard({ item, press }) {
       setAllComment(data);
     } catch (error) {
       console.log(error);
-      console.log("Diary Card Get All Comment");
     }
   };
 

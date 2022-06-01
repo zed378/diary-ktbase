@@ -152,10 +152,6 @@ function EditDiary() {
               placeholder:
                 "Type something here & make sure you only add thumbnail using that big box.",
             }}
-            onReady={(editor) => {
-              // You can store the "editor" and use when it is needed.
-              console.log("Editor is ready to use!", editor);
-            }}
             onChange={handleEditorChange}
           />
 

@@ -100,7 +100,6 @@ function DetailDiary() {
       const { data, error } = await kontenbase
         .service("Comments")
         .getById(commentId);
-      console.log(data);
 
       if (data.isClick === "0") {
         const { data, error } = await kontenbase

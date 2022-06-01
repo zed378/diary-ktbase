@@ -14,7 +14,6 @@ function EditCommentModal({ press, param, val }) {
 
   const handleChange = (e) => {
     setForm(e.target.value);
-    console.log(form);
   };
 
   const handleSubmit = async (e) => {

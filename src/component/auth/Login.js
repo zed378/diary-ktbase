@@ -51,7 +51,6 @@ function Login(props) {
         close();
         document.location.reload(true);
       }
-      console.log(state.user._id);
     } catch (error) {
       console.log(error);
     }

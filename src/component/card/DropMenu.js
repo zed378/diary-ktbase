@@ -27,8 +27,7 @@ function DropMenu(props) {
   const removeSession = async () => {
     const URL = process.env.REACT_APP_AUTH_API;
 
-    const response = await axios.post(`${URL}/logout`);
-    console.log(response);
+    await axios.post(`${URL}/logout`);
   };
 
   const LogOut = () => {
