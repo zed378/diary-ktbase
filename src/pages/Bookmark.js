@@ -28,6 +28,7 @@ function Bookmark() {
       console.log(error);
     }
   };
+
   useEffect(() => {
     getMarked();
   }, []);
