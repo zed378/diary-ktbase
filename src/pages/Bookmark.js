@@ -1,20 +1,15 @@
 // import package
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { KontenbaseClient } from "@kontenbase/sdk";
 
 // import component
 import BookmarkCard from "../component/card/BookmarkCard";
-import { UserContext } from "../context/UserContext";
 
 // import assets
 import nomark from "../assets/img/nomark.svg";
 import cssModules from "../assets/css/Home.module.css";
 
-import { API } from "../config/api";
-
 function Bookmark() {
-  const [state] = useContext(UserContext);
-
   const kontenbase = new KontenbaseClient({
     apiKey: process.env.REACT_APP_API_KEY,
   });
@@ -22,19 +17,18 @@ function Bookmark() {
   const [marked, setMarked] = useState([]);
   const getMarked = async () => {
     try {
-      const { data, error } = await kontenbase.service("Diaries").find({
-        lookup: "*",
+      const { data, error } = await kontenbase.service("Bookmarks").find({
+        lookup: "diariesId",
         where: {
           userId: localStorage.id,
         },
       });
-      console.log(data);
       setMarked(data);
     } catch (error) {
       console.log(error);
     }
   };
-
+  console.log(marked);
   useEffect(() => {
     getMarked();
   }, []);
@@ -45,16 +39,16 @@ function Bookmark() {
 
       <div className={cssModules.cardContainer}>
         {/* card */}
-        {marked.length === 0 ? (
+        {!marked ? (
           <div className={cssModules.nomark}>
             <img src={nomark} alt={nomark} />
             <h1>No Bookmark</h1>
           </div>
         ) : (
           <>
-            {/* {marked?.map((item, index) => (
+            {marked?.map((item, index) => (
               <BookmarkCard item={item} key={index} press={getMarked} />
-            ))} */}
+            ))}
           </>
         )}
         {/* end of card */}

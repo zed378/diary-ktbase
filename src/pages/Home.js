@@ -19,13 +19,15 @@ function Home() {
 
   const getDiaries = async () => {
     try {
-      const { data, error } = await kontenbase.service("Diaries").find();
-      console.log(data);
+      const { data, error } = await kontenbase.service("Diaries").find({
+        lookup: "*",
+      });
       setDiaries(data);
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(diaries);
 
   useEffect(() => {
     getDiaries();

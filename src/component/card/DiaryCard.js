@@ -49,7 +49,9 @@ function DiaryCard({ item, press }) {
       );
 
       setUser(data.data);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const setMark = async () => {
