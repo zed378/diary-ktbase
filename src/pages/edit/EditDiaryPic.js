@@ -1,8 +1,7 @@
 // import package
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
-// import component
+import { KontenbaseClient } from "@kontenbase/sdk";
 
 // import assets
 import "../../assets/css/ckeditor.css";
@@ -17,6 +16,10 @@ function EditDiaryPic() {
     document.getElementById("thumbnail").click();
   };
 
+  const kontenbase = new KontenbaseClient({
+    apiKey: process.env.REACT_APP_API_KEY,
+  });
+
   const { idPost } = useParams();
 
   // alert
@@ -25,7 +28,7 @@ function EditDiaryPic() {
 
   // store data
   const [form, setForm] = useState({
-    thumbnail: "",
+    thumbnail: null,
   });
 
   const [diary, setDiary] = useState([]);
@@ -33,12 +36,14 @@ function EditDiaryPic() {
   // get data from previous diary
   const getDiary = async () => {
     try {
-      const response = await API.get(`/post/${idPost}`);
+      const { data, error } = await kontenbase
+        .service("Diaries")
+        .getById(idPost);
 
-      setPreview(response.data.data.thumbnail);
+      setPreview(data.thumbnail);
 
       setDiary({
-        id: response.data.data.id,
+        id: data._id,
       });
     } catch (error) {
       console.log(error);
@@ -65,19 +70,16 @@ function EditDiaryPic() {
     try {
       e.preventDefault();
 
-      const config = {
-        headers: {
-          "Content-type": "multipart/form-data",
-        },
-      };
+      const file = form.thumbnail[0];
 
-      // Store form data as object
-      const formData = new FormData();
-      formData.set("thumbnail", form.thumbnail[0], form.thumbnail[0].name);
+      const { data, error } = await kontenbase.storage.upload(file);
 
-      const response = await API.patch(`/post/${diary.id}`, formData, config);
-
-      if (response.data.status === "Success") {
+      if (data) {
+        const { pic, err } = await kontenbase
+          .service("Diaries")
+          .updateById(idPost, {
+            thumbnail: data.url,
+          });
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
