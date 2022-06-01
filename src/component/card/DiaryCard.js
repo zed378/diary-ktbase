@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import dateFormat, { masks } from "dateformat";
 import DOMPurify from "dompurify";
 import { KontenbaseClient } from "@kontenbase/sdk";
-import axios from "axios";
 
 // import assets
 import bookmark from "../../assets/img/bookmark.svg";
