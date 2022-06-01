@@ -50,7 +50,6 @@ function AddDiary() {
       let url = URL.createObjectURL(e.target.files[0]);
       setPreview(url);
     }
-    console.log(form);
   };
 
   const handleSubmit = async (e) => {

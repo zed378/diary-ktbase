@@ -1,6 +1,7 @@
 // import package
 import { useState, useEffect } from "react";
 import { KontenbaseClient } from "@kontenbase/sdk";
+import axios from "axios";
 
 // import component
 import DiaryCard from "../component/card/DiaryCard";
@@ -19,10 +20,10 @@ function Home() {
 
   const getDiaries = async () => {
     try {
-      const { data, error } = await kontenbase.service("Diaries").find({
-        lookup: "*",
-      });
-      setDiaries(data);
+      const data = await axios.get(
+        `${process.env.REACT_APP_API_URL}/Diaries?$lookup=*`
+      );
+      setDiaries(data.data);
     } catch (error) {
       console.log(error);
     }

@@ -24,7 +24,7 @@ function NavLog() {
     try {
       const { data, error } = await kontenbase
         .service("Users")
-        .getById(`${localStorage.id}`);
+        .getById(localStorage.id);
       setUser(data);
     } catch (error) {
       console.log(error);

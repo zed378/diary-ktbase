@@ -27,7 +27,7 @@ function DiaryCard({ item, press }) {
   const [user, setUser] = useState();
 
   const [findMark, setFindMark] = useState([]);
-  const [findLike, setFindLike] = useState([]);
+  const [findLike, setFindLike] = useState();
 
   const [marked, setMarked] = useState([]);
   const [like, setLike] = useState([]);
@@ -38,31 +38,31 @@ function DiaryCard({ item, press }) {
     apiKey: process.env.REACT_APP_API_KEY,
   });
 
-  axios.defaults.headers.common = {
-    Authorization: `Bearer ${localStorage.token}`,
-  };
-
   const getUser = async () => {
     try {
       const { data, error } = await kontenbase.service("Diaries").find({
-        lookup: ["userId"],
-        where: {
-          _id: item._id,
-        },
+        lookup: "*",
       });
+      console.log(data);
 
       setUser(data[0].userId[0].firstName + " " + data[0].userId[0].lastName);
     } catch (error) {
       console.log(error);
+      console.log("Diary Card Get User");
     }
   };
+  console.log(user);
 
   const setMark = async () => {
     try {
-      const { data, error } = await kontenbase.service("Bookmarks").find();
-      console.log(data);
+      const { data, error } = await kontenbase.service("Bookmarks").find({
+        where: {
+          userId: localStorage.id,
+          diariesId: item._id,
+        },
+      });
+
       setFindMark(data);
-      console.log(findMark);
 
       if (data.length === 0) {
         const { data, error } = await kontenbase.service("Bookmarks").create({
@@ -77,6 +77,7 @@ function DiaryCard({ item, press }) {
       press();
     } catch (error) {
       console.log(error);
+      console.log("Diary Card Set Mark");
     }
   };
 
@@ -93,6 +94,7 @@ function DiaryCard({ item, press }) {
       setFindMark([]);
     } catch (error) {
       console.log(error);
+      console.log("Diary Card Get Mark");
     }
   };
 
@@ -108,18 +110,22 @@ function DiaryCard({ item, press }) {
 
   const clickLike = async () => {
     try {
-      const data = await axios.get(
-        `${process.env.REACT_APP_API_URL}/Likes?diariesId=${item._id}&userId=${localStorage.id}`
-      );
-      setFindLike(data.data[0]);
+      const { data, error } = await kontenbase.service("Likes").find({
+        where: {
+          userId: localStorage.id,
+          diariesId: item._id,
+        },
+      });
+      setFindLike(data);
+      console.log(findLike);
 
-      if (data.data.length === 0) {
+      if (findLike.length === 0) {
         const { data, error } = await kontenbase.service("Likes").create({
           userId: [localStorage.id],
           diariesId: [item._id],
         });
       } else {
-        delLike(findLike._id);
+        delLike(findLike[0]._id);
       }
 
       getLike();
@@ -127,6 +133,7 @@ function DiaryCard({ item, press }) {
       press();
     } catch (error) {
       console.log(error);
+      console.log("Diary Card Click Like");
     }
   };
 
@@ -139,20 +146,20 @@ function DiaryCard({ item, press }) {
         },
       });
       setLike(data);
-      setFindLike(null);
+      setFindLike();
     } catch (error) {
       console.log(error);
+      console.log("Diary Card Get Like");
     }
   };
 
   const delLike = async (idLike) => {
-    try {
-      const { data, error } = await kontenbase
-        .service("Likes")
-        .deleteById(`${idLike}`);
-    } catch (error) {
-      console.log(error);
-    }
+    const { data, error } = await kontenbase
+      .service("Likes")
+      .deleteById(idLike);
+
+    getLike();
+    getAllLike();
   };
 
   const getAllLike = async () => {
@@ -167,6 +174,7 @@ function DiaryCard({ item, press }) {
       setAllLike(data);
     } catch (error) {
       console.log(error);
+      console.log("Diary Card Get All Like");
     }
   };
 
@@ -181,6 +189,7 @@ function DiaryCard({ item, press }) {
       setAllComment(data);
     } catch (error) {
       console.log(error);
+      console.log("Diary Card Get All Comment");
     }
   };
 
@@ -223,11 +232,11 @@ function DiaryCard({ item, press }) {
   };
 
   useEffect(() => {
-    getUser();
     getmark();
     getLike();
     getAllLike();
     getAllComment();
+    getUser();
   }, []);
 
   return (
