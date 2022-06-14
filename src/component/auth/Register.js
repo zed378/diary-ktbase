@@ -14,9 +14,7 @@ function Register(props) {
 
   // alert
   const [success, setSuccess] = useState(false);
-  const [failed, setFailed] = useState(false);
   const [registered, setRegistered] = useState(false);
-  const [pass, setPass] = useState(false);
 
   // store data
   const [form, setForm] = useState({
@@ -48,6 +46,7 @@ function Register(props) {
 
       if (!error) {
         setSuccess(true);
+        localStorage.setItem("id", user._id);
         setTimeout(() => {
           setSuccess(false);
         }, 4000);
@@ -86,23 +85,6 @@ function Register(props) {
             }}
           >
             Register Success
-          </h3>
-        ) : (
-          <></>
-        )}
-
-        {failed ? (
-          <h3
-            style={{
-              color: "red",
-              background: "#e0cecc",
-              textAlign: "center",
-              padding: "0.5rem 0",
-              fontSize: "1rem",
-              fontFamily: "avenirs",
-            }}
-          >
-            Register Failed
           </h3>
         ) : (
           <></>

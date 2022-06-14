@@ -40,7 +40,6 @@ function Login(props) {
         email,
         password,
       });
-      console.log(error);
 
       if (error === undefined || null || "") {
         dispatch({

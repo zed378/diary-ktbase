@@ -1,5 +1,4 @@
 // import package
-import { useContext, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // import assets
@@ -24,7 +23,6 @@ import {
 import PrivateRoute from "./context/PrivateRoute";
 
 // import config
-import { UserContext } from "./context/UserContext";
 import { setAuthToken } from "./config/api";
 
 // init token on axios every time the app is refreshed
@@ -33,7 +31,6 @@ if (localStorage.token) {
 }
 
 function App() {
-  // const [state, dispatch] = useContext(UserContext);
   return (
     <Router>
       {localStorage.token ? <NavLog /> : <Nav />}
