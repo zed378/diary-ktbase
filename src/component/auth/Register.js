@@ -107,23 +107,6 @@ function Register(props) {
           <></>
         )}
 
-        {pass ? (
-          <h3
-            style={{
-              color: "red",
-              background: "#e0cecc",
-              textAlign: "center",
-              padding: "0.5rem 0",
-              fontSize: "1rem",
-              fontFamily: "avenirs",
-            }}
-          >
-            Password min. length is 6 character
-          </h3>
-        ) : (
-          <></>
-        )}
-
         <form onSubmit={handleSubmit}>
           <label htmlFor="firstName">First Name</label>
           <input
